@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\felps\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\felps\\.nuget\\packages"
+    ]
+  }
+}
