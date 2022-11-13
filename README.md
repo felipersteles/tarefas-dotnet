@@ -9,3 +9,5 @@ Aplicação fullstack desenvolvida utilizando .Net e React.js
 ### .NET
 ### React
 ### Fontawesome
+### MySQL
+### Cors

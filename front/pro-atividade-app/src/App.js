@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AtividadeForm from "./components/AtividadeForm";
 import AtividadeLista from "./components/AtividadeLista";
+import api from "./api/atividade";
 
 // const estadoInicial = [
 //   {
@@ -18,30 +19,45 @@ import AtividadeLista from "./components/AtividadeLista";
 // ];
 
 const App = () => {
-  const [index, setIndex] = useState(0)
   const [atividades, setAtividades] = useState([]);
-  const [atividade, setAtividade] = useState({id: 0});
+  const [atividade, setAtividade] = useState({ id: 0 });
+
+  const pegaTodasAtividades = async () => {
+    const response = await api.get("atividade");
+
+    return response.data;
+  };
 
   useEffect(() => {
-    atividades.length <= 0 ? setIndex(1) :
-      setIndex(Math.max.apply(
-        Math,
-        atividades.map((item) => item.id)
-      ) + 1,)
-  },[atividades])
+    // professor fez com esse async e await mas nao creio que seja necessario
+    // se estas lendo isso e sabes a causa e efeito por favor entrar em contato comigo tamo junto s2
+    const getAtividades = async () => {
+      const todasAtividades = await pegaTodasAtividades();
 
-  function addAtividade(atv) {
-    setAtividades([...atividades, { ...atv, id:  index}]);
+      if (todasAtividades) setAtividades(todasAtividades);
+    };
+
+    getAtividades();
+  }, []);
+
+  const addAtividade = async (atv) => {
+    const response = await api.post("atividade", atv);
+    // console.log(response.data);
+
+    setAtividades([...atividades, response.data]);
     // console.log(atividades);
-    setAtividade({id: 0});
-  }
+    setAtividade({ id: 0 });
+  };
 
   // arrow function so pra brincar
-  const handleDelete = (id) => {
-    const atividadesFiltradas = atividades.filter(
-      (atividade) => atividade.id !== id
-    );
-    setAtividades([...atividadesFiltradas]);
+  const handleDelete = async (id) => {
+    const response = await api.delete(`atividade/${id}`);
+    if (response) {
+      const atividadesFiltradas = atividades.filter(
+        (atividade) => atividade.id !== id
+      );
+      setAtividades([...atividadesFiltradas]);
+    }
   };
 
   const pegarAtividade = (id) => {
@@ -49,9 +65,14 @@ const App = () => {
     setAtividade(atividade[0]);
   };
 
-  const atualizarAtividade = (atv) => {
-    setAtividades(atividades.map((item) => (item.id === atv.id ? atv : item)));
-    setAtividade({id: 0})
+  const atualizarAtividade = async (atv) => {
+    const response = await api.put(`atividade/${atv.id}`, atv);
+    const { id } = response.data;
+
+    setAtividades(
+      atividades.map((item) => (item.id === id ? response.data : item))
+    );
+    setAtividade({ id: 0 });
   };
 
   return (
