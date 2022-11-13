@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\proatividade.api\\ProAtividade.API.csproj": {}
+    "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\ProAtividade.API\\ProAtividade.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\proatividade.api\\ProAtividade.API.csproj": {
+    "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\ProAtividade.API\\ProAtividade.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\proatividade.api\\ProAtividade.API.csproj",
+        "projectUniqueName": "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\ProAtividade.API\\ProAtividade.API.csproj",
         "projectName": "ProAtividade.API",
-        "projectPath": "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\proatividade.api\\ProAtividade.API.csproj",
+        "projectPath": "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\ProAtividade.API\\ProAtividade.API.csproj",
         "packagesPath": "C:\\Users\\felps\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\proatividade.api\\obj\\",
+        "outputPath": "C:\\Users\\felps\\Documents\\Projetos\\CSHARP\\dotnet_curso\\back\\src\\ProAtividade.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\felps\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,26 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"

@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = ProAtividade.API
-build_property.ProjectDir = C:\Users\felps\Documents\Projetos\CSHARP\dotnet_curso\back\src\proatividade.api\
+build_property.ProjectDir = C:\Users\felps\Documents\Projetos\CSHARP\dotnet_curso\back\src\ProAtividade.API\
